@@ -1,0 +1,108 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">14.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <Name>matrices-library</Name>
+    <RootNamespace>matrices-library</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>d475b862-4db0-4f89-ae28-43c441f7d512</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>app.ts</StartupFile>
+    <StartWebBrowser>False</StartWebBrowser>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
+    <EnableTypeScript>true</EnableTypeScript>
+    <StartWebBrowser>false</StartWebBrowser>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="app.ts" />
+    <Content Include="package.json" />
+    <Content Include="README.md" />
+    <Content Include="tsconfig.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Abstract\" />
+    <Folder Include="Impl\" />
+    <Folder Include="Impl\Determinant\" />
+    <Folder Include="Impl\Inversion\" />
+    <Folder Include="Impl\Factory\" />
+    <Folder Include="Impl\Normalization\" />
+    <Folder Include="Impl\Operators\" />
+    <Folder Include="Impl\Serialization\" />
+    <Folder Include="Impl\Transpoze\" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Abstract\IDeterminantCalculator.ts" />
+    <TypeScriptCompile Include="Abstract\IMatrixNormalization.ts" />
+    <TypeScriptCompile Include="Abstract\IMatrixOperator.ts" />
+    <TypeScriptCompile Include="Abstract\IMatrixFactory.ts" />
+    <TypeScriptCompile Include="Abstract\IMatrixSerializer.ts" />
+    <TypeScriptCompile Include="Abstract\IMatrix.ts" />
+    <TypeScriptCompile Include="Abstract\IMatrixInversion.ts" />
+    <TypeScriptCompile Include="Abstract\IMatrixTranspoze.ts" />
+    <TypeScriptCompile Include="Impl\Determinant\DeterminantCalculatorBareissImpl.ts" />
+    <TypeScriptCompile Include="Impl\Determinant\DeterminantCalculatorSarrusImpl.ts" />
+    <TypeScriptCompile Include="Impl\Inversion\MatrixInversionBareissImpl.ts" />
+    <TypeScriptCompile Include="Impl\Factory\MatrixFactoryDefaultImpl.ts" />
+    <TypeScriptCompile Include="Impl\Matrix.ts" />
+    <TypeScriptCompile Include="Impl\Normalization\MatrixNormalizationDefaultImpl.ts" />
+    <TypeScriptCompile Include="Impl\Operators\MatrixMultiplyOperator.ts" />
+    <TypeScriptCompile Include="Impl\Operators\MatrixSubtractOperator.ts" />
+    <TypeScriptCompile Include="Impl\Operators\MatrixSumOperator.ts" />
+    <TypeScriptCompile Include="Impl\Serialization\MatrixSerializerDefaultImpl.ts" />
+    <TypeScriptCompile Include="Impl\Transpoze\MatrixTranspozeDefaultImpl.ts" />
+  </ItemGroup>
+  <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:48022/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost:1337</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
